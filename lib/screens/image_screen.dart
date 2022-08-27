@@ -19,11 +19,16 @@ class _ImageScreenState extends State<ImageScreen> {
         backgroundColor: Colors.black,
       ),
       backgroundColor: Colors.black,
-      body: Column(
-        children: [
-          Padding(padding: EdgeInsets.only(top: 50)),
-          bigImage == null ? Text('Loading...') : Image.network(bigImage),
-        ]
+      body: Center(
+        child: Column(
+            children: [
+              Container (
+                height: 650,
+                width: MediaQuery.of(context).size.width,
+                child: bigImage == null ? Text('Loading...') : Image.network(bigImage, fit: BoxFit.cover),
+              )
+            ]
+        )
       )
     );
 

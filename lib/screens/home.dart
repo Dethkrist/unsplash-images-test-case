@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
       Picture picture = Picture(
           u['id'],
           u['urls']['thumb'],
-          u['urls']['full'],
+          u['urls']['regular'],
           u['user']['name'],
           u['description']
       );
@@ -68,14 +68,12 @@ class _HomeState extends State<Home> {
                               Navigator.push(context, MaterialPageRoute(
                                 builder: (context) => ImageScreen(),
                                 settings: RouteSettings(
-                                  arguments: snapshot.data[i].full,
+                                  arguments: snapshot.data[i].regular,
                                 )
-                              ));
-                            }
+                              ));}
                           )
                         );
-                      });
-                    },
+                      });},
                   )
               )
             )
@@ -85,7 +83,7 @@ class _HomeState extends State<Home> {
 
 
 class Picture {
-  final String id, thumb, full, name;
+  final String id, thumb, regular, name;
   String? description;
-  Picture(this.id, this.thumb, this.full, this.name, this.description);
+  Picture(this.id, this.thumb, this.regular, this.name, this.description);
 }
