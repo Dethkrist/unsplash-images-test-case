@@ -23,9 +23,8 @@ class _ImageScreenState extends State<ImageScreen> {
         child: Column(
             children: [
               Container (
-                height: 650,
-                width: MediaQuery.of(context).size.width,
-                child: bigImage == null ? Text('Loading...') : Image.network(bigImage, fit: BoxFit.cover),
+                height: MediaQuery.of(context).size.height / 1.2,
+                child: bigImage == null ? Text('Loading...') : Image.network(bigImage, fit: BoxFit.contain),
               )
             ]
         )
